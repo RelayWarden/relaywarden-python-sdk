@@ -1,0 +1,50 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "relaywarden"
+version = "1.0.0"
+description = "Official Python SDK for RelayWarden API"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [
+    {name = "RelayWarden", email = "support@relaywarden.com"}
+]
+keywords = ["relaywarden", "email", "api", "sdk"]
+urls = {Homepage = "https://github.com/relaywarden/relaywarden-python-sdk", Repository = "https://github.com/relaywarden/relaywarden-python-sdk", Documentation = "https://github.com/relaywarden/relaywarden-python-sdk#readme", "Bug Tracker" = "https://github.com/relaywarden/relaywarden-python-sdk/issues"}
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+]
+
+dependencies = [
+    "requests>=2.32.5",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=9.0.2",
+    "pytest-cov>=7.0.0",
+    "black>=25.12.0",
+    "mypy>=1.19.1",
+]
+
+[tool.setuptools]
+packages = ["relaywarden"]
+
+[tool.black]
+line-length = 100
+target-version = ['py310']
+
+[tool.mypy]
+python_version = "3.10"
+warn_return_any = true
+warn_unused_configs = true
